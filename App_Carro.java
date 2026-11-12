@@ -1,25 +1,51 @@
-// ------------Classe Carro e os Metodos--------------------
-public class Carro {
 
-    // Atributos
-    String marca;
-    String modelo;
-    String cor;
+import java.util.Scanner;
 
-    // Métodos
-    void ligar() {
-        System.out.println("Carro ligado!");
-    }
+public class App_Carro {
 
-    void desligar() {
-        System.out.println("Carro desligado!");
-    }
+    public static void main(String[] args) {
 
-    void acelerar() {
-        System.out.println("Carro acelerando!");
-    }
+        Scanner teclado = new Scanner(System.in);
 
-    void frear() {
-        System.out.println("Carro freando!");
+        // Criando o primeiro objeto da classe Carro
+        Carro carro1 = new Carro("Toyota", "Corolla", "Preto");
+
+        // Exibindo os dados
+        carro1.exibirInformacoes();
+
+        // Menu de ações
+        System.out.println("\n=== MENU DO CARRO ===");
+        System.out.println("1 - Ligar");
+        System.out.println("2 - Desligar");
+        System.out.println("3 - Acelerar");
+        System.out.println("4 - Frear");
+
+        System.out.print("\nDigite uma opção: ");
+        int opcao = teclado.nextInt();
+
+        // Verificando a opção escolhida
+        if (opcao == 1) {
+
+            carro1.ligar();
+
+        } else if (opcao == 2) {
+
+            carro1.desligar();
+
+        } else if (opcao == 3) {
+
+            carro1.acelerar();
+
+        } else if (opcao == 4) {
+
+            carro1.frear();
+
+        } else {
+
+            System.out.println("Opção inválida!");
+
+        }
+
+        teclado.close();
     }
 }
